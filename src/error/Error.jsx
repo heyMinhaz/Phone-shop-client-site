@@ -1,10 +1,11 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Error = () => {
     return (
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white ">
         <div className="container min-h-screen px-6 py-12 mx-auto lg:flex lg:items-center lg:gap-12">
           <div className="w-full lg:w-1/2">
             <p className="text-sm font-medium text-blue-500 dark:text-blue-400">
@@ -34,11 +35,11 @@ const Error = () => {
                     d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
                   />
                 </svg>
-                <span>Go back</span>
+                <span> <NavLink to='/' >Go back</NavLink> </span>
               </button>
 
               <button className="w-1/2 px-5 py-2 text-sm tracking-wide text-white transition-colors duration-200 bg-blue-500 rounded-lg shrink-0 sm:w-auto hover:bg-blue-600 dark:hover:bg-blue-500 dark:bg-blue-600">
-                Take me home
+             <NavLink to='/'>Take me home</NavLink>   
               </button>
             </div>
           </div>

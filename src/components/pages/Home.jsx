@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Future from '../../feture/Future';
 
 const Home = () => {
     return (
       <div>
-        <div className="carousel lg:h-[70vh]">
+        <div className="carousel lg:h-[70vh]  ">
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://business.ee.co.uk/content/dam/eeb-site/images-2023/home-page/teasers/google-launches/pixel-8-launch/buy-now/pixel8-pro-desktop-banner-bay-buynow.png"
@@ -61,7 +62,10 @@ const Home = () => {
               </a>
             </div>
           </div>
-        </div>
+            </div>
+            <div className=' mt-32'>
+            <Future></Future>
+</div>
       </div>
     );
 };

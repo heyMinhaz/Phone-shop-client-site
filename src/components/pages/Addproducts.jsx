@@ -111,10 +111,10 @@ const Addproducts = () => {
                         />
                       </div>
 
-                      <div className="mt-7 lg:ml-20 ">
+                      <div className="mt-7 lg:ml-20 lg:mr-20">
                         <select
                           name="type"
-                          className="select select-info w-full max-w-xs"
+                          className="select select-info  max-w-xs "
                         >
                           <option disabled selected>
                             Select Type
@@ -129,7 +129,7 @@ const Addproducts = () => {
                           for="fName"
                           className="lg:mb-1 lg:block text-gray-700"
                         >
-                          <span className="lg:ml-10 text-sm text-gray-700">
+                          <span className=" text-sm text-gray-700">
                             Rating
                           </span>
                         </label>
@@ -138,7 +138,7 @@ const Addproducts = () => {
                           name="rating"
                           id="fName"
                           placeholder="Rating"
-                          className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md lg:ml-10"
+                          className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md "
                         />
                       </div>
                     </div>
