@@ -201,7 +201,7 @@ const Navbar = () => {
                   alt=""
                   loading="lazy"
                 />{" "}
-                <button className="btn ">Login</button>
+              <NavLink to="/login"> <button className="btn ">Login</button></NavLink> 
               </a>
               {/* Second dropdown menu */}
               <ul

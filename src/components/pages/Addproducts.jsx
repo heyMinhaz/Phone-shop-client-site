@@ -2,6 +2,7 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const Addproducts = () => {
 
@@ -34,9 +35,24 @@ const Addproducts = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+              console.log(data);
+              
+ if (data.insertedId) {
+ 
+ // eslint-disable-next-line no-undef
+ Swal.fire({
+   title: "success",
+   text: "you added succesfully",
+   icon: "success",
+   confirmButtonText: "Thank you",
+ });
+ 
+ }
+
           });
        
+    
+        
 
     } 
 
