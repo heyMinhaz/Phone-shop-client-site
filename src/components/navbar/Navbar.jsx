@@ -44,15 +44,18 @@ const Navbar = () => {
               className="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
               href="#"
             >
-              <img
-                src="https://i.ibb.co/RcM12Ys/2b0c96bb864f56f97c2c649f8e5548bca9c31248-731x731-removebg-preview.png"
-                style={{
-                  height: "45px",
-                  width: "",
-                }}
-                alt="TE Logo"
-                loading="lazy"
-              />
+              <NavLink to="/">
+                {" "}
+                <img
+                  src="https://i.ibb.co/RcM12Ys/2b0c96bb864f56f97c2c649f8e5548bca9c31248-731x731-removebg-preview.png"
+                  style={{
+                    height: "45px",
+                    width: "",
+                  }}
+                  alt="TE Logo"
+                  loading="lazy"
+                />
+              </NavLink>
             </a>
 
             {/* Left navigation links */}
@@ -103,10 +106,7 @@ const Navbar = () => {
           {/* Right elements */}
           <div className="relative flex items-center">
             {/* Cart Icon */}
-            <a
-              className="mr-4 text-neutral-600 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-500 dark:hover:text-neutral-700 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
-             
-            >
+            <a className="mr-4 text-neutral-600 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-500 dark:hover:text-neutral-700 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400">
               <span className="[&>svg]:w-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ const Navbar = () => {
                 aria-expanded="false"
               >
                 {/* Dropdown trigger icon */}
-               
+
                 {/* Notification counter */}
                 <span className="absolute -mt-4 ml-2.5 rounded-full bg-danger px-[0.35em] py-[0.15em] text-[0.6rem] font-bold leading-none text-white">
                   1

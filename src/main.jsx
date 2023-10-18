@@ -8,37 +8,29 @@ import Layout from './components/layout/Layout';
 import Home from './components/pages/Home';
 import Phone from './components/pages/Phone';
 import Addproducts from './components/pages/Addproducts';
+import Error from './error/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <Error></Error>,
 
     children: [
-
       {
-
         path: "/",
-        element:<Home></Home>,
-
+        element: <Home></Home>,
       },
       {
-
         path: "/phone",
-        element:<Phone></Phone>,
-
+        element: <Phone></Phone>,
       },
       {
-
         path: "/addproducts",
-        element:<Addproducts></Addproducts>,
-
-      }
-
-
-]
-
+        element: <Addproducts></Addproducts>,
+      },
+    ],
   },
 ]);
 

@@ -5,7 +5,7 @@ import React from 'react';
 
 const Addproducts = () => {
 
-    const handelRegister = (e) => {
+    const handelAdd = (e) => {
         e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget)
@@ -20,17 +20,30 @@ const Addproducts = () => {
         const textarea = form.get("textarea");
         const photourl = form.get("photourl");
         
-
         
 
-        console.log(name, Price, brandname, type, rating, textarea, photourl);
+        const addData = {name, Price, brandname, type, rating, textarea, photourl}
+        console.log(addData);
 
-    }
+        fetch("http://localhost:5001/phones", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(addData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+       
+
+    } 
 
 
     return (
       <div>
-        <form onSubmit={handelRegister}>
+        <form onSubmit={handelAdd}>
           <section className="bg-white dark:bg-gray-900">
             <div className="flex justify-center min-h-screen">
               <div className="flex items-center w-full max-w-3xl p-8 mx-auto lg:px-12 lg:w-3/5">
