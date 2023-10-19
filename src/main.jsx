@@ -12,6 +12,7 @@ import Error from './error/Error';
 import Login from './login/Login';
 import Register from './register/Register';
 import Contact from './components/pages/Contact';
+import BrandData from './brandcard/BrandData';
 
 
 
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () => fetch("./fakeData.json"),
       },
       {
         path: "/contact",
@@ -41,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: ":/Oneplus",
+        element: <BrandData></BrandData>,
+        loader: "http://localhost:5001/phones",
       },
     ],
   },
