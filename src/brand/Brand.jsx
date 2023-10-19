@@ -13,15 +13,21 @@ const Brand = ({ brand }) => {
   return (
     <div className="  lg:p-10 p-10">
       <Link to={`/${name} `} onClick={() => handelPhone(name)}>
-        <div className="card  bg-base-100 shadow-xl image-full  ">
-          <figure className="lg:w-96 lg:h-60 h-44">
-            <img src={brand.image} />
+        <div className="card w-96 h-96 bg-base-100 shadow-xl">
+          <figure>
+            <img
+              src={brand.image}
+            />
           </figure>
-          <div className=" card-body">
-            <h2 className="card-title ">{brand.title}</h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+          <div className="card-body ">
+            <h2 className="card-title">
+              
+                          <div className="badge badge-secondary">{brand.name}</div>
+            </h2>
+                      <p>{ brand.title}</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Buy Now</button>
+         
+              <div className="badge badge-outline">See Products</div>
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import Future from '../../feture/Future';
 import { useLoaderData } from 'react-router-dom';
 import Allproducts from '../../allproducts/Allproducts';
 import Brand from '../../brand/Brand';
+import Most from '../../most/Most';
 
 const Home = () => {
 
@@ -89,7 +90,7 @@ const Home = () => {
           </div>
         </div>
         <div className="mt-10">
-          <h1 className="text-4xl font-sm text-center text-slate-700">
+          <h1 className="  text-5xl font-bold text-center text-slate-700">
             Our Brands
           </h1>
           <div className="lg:grid lg:grid-cols-3 lg:gap-10  ">
@@ -100,7 +101,16 @@ const Home = () => {
         </div>
 
         <div className="mt-10">
-          <h1 className="  text-4xl font-sm text-center text-slate-700">
+          <h1 className="  text-5xl font-bold text-center text-slate-700">
+            Our Most Popular Products
+          </h1>
+          <div className="mt-10">
+            <Most></Most>
+          </div>
+        </div>
+
+        <div className="mt-10">
+          <h1 className="  text-5xl font-bold text-center text-slate-700">
             Our Commitment
           </h1>
           <div className=" mt-10">
