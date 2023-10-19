@@ -7,11 +7,9 @@ const Contact = () => {
             <div className="flex min-h-screen items-center justify-start bg-white">
       <div className="mx-auto w-full max-w-lg">
         <h1 className="text-4xl font-medium">Contact us</h1>
-        <p className="mt-3">Email us at help@domain.com or message us here:</p>
-
+      
         <form action="https://api.web3forms.com/submit" className="mt-10">
-          {/* This is a working contact form. 
-               Get your free access key from: https://web3forms.com/  */}
+         
           <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" /> 
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="relative z-0">
