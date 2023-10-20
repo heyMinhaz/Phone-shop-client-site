@@ -1,9 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../provider/Authprovider';
 
 
 const Navbar = () => {
+
+    const { user,logOut } = useContext(AuthContext);
+
+    const handelSingOut = () => {
+    
+logOut().then().catch();
+
+}
+
+
+
     return (
       <nav className="  flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5  dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
         <div className="flex w-full flex-wrap items-center justify-between ">
@@ -105,8 +117,7 @@ const Navbar = () => {
           </div>
 
           {/* Right elements */}
-                <div className="relative flex items-center">
-                   
+          <div className="relative flex items-center">
             {/* Cart Icon */}
             <a className="mr-4 text-neutral-600 transition duration-200 hover:text-neutral-700 hover:ease-in-out focus:text-neutral-700 disabled:text-black/30 motion-reduce:transition-none dark:text-neutral-500 dark:hover:text-neutral-700 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400">
               <span className="[&>svg]:w-5">
@@ -202,8 +213,17 @@ const Navbar = () => {
                   style={{ height: "25px", width: "25px" }}
                   alt=""
                   loading="lazy"
-                />{" "}
-              <NavLink to="/login"> <button className="btn ">Login</button></NavLink> 
+                />
+
+                {user ? (
+                  <button onClick={handelSingOut} className="btn">
+                    Sing Out
+                  </button>
+                ) : (
+                  <NavLink to="/login">
+                    <button className="btn ">Login</button>
+                  </NavLink>
+                )}
               </a>
               {/* Second dropdown menu */}
               <ul

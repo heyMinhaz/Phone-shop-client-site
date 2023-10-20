@@ -7,7 +7,7 @@ import Swal from 'sweetalert2';
 const Addproducts = () => {
 
     const handelAdd = (e) => {
-        e.preventDefault();
+      e.preventDefault();
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget)
 
@@ -20,7 +20,7 @@ const Addproducts = () => {
         const rating = form.get("rating");
         const textarea = form.get("textarea");
         const photourl = form.get("photourl");
-        
+      
         
 
         const addData = {name, Price, brandname, type, rating, textarea, photourl}
@@ -38,7 +38,7 @@ const Addproducts = () => {
               console.log(data);
               
  if (data.insertedId) {
- 
+ e.target.reset();
  // eslint-disable-next-line no-undef
  Swal.fire({
    title: "success",

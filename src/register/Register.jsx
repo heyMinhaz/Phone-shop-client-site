@@ -1,11 +1,74 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../provider/Authprovider';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
+import app from '../firebase/Firebase.config';
+import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
+
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+
+    console.log("location i n the login page", location);
+  
+  const { createUser } = useContext(AuthContext);
+
+    const handelRegister = (e) => {
+      e.preventDefault();
+      console.log(e.currentTarget);
+      const form = new FormData(e.currentTarget);
+
+
+      const name = form.get("name");
+      const email = form.get("email");
+      const password = form.get("password");
+      
+      const photourl = form.get("photourl");
+
+      console.log(name, email, password, photourl);
+      
+      createUser(email, password)
+        .then(result => {
+        
+console.log(result.user);
+
+        })
+      
+      .catch (error=> {
+  
+  console.error(error);
+  
+      })
+      
+
+    };
+
+  
+      const handelPopUpRe = () => {
+        signInWithPopup(auth, provider)
+          .then((result) => {
+            const user = result.user;
+            console.log(user);
+           
+          })
+          .catch((error) => {
+            console.log("error", error.message);
+          });
+      };
+  
+  
+
+
     return (
       <div>
         <div className="py-6">
-          <form className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm  ">
+          <form
+            onSubmit={handelRegister}
+            className="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm  "
+          >
             <div className="w-full p-7 ">
               <p className="text-xl text-gray-600 text-center">
                 Welcome to world of Phone
@@ -34,7 +97,10 @@ const Register = () => {
                     />
                   </svg>
                 </div>
-                <h1 className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold">
+                <h1
+                  onClick={handelPopUpRe}
+                  className="px-4 py-3 w-5/6 text-center text-gray-600 font-bold"
+                >
                   Register in with Google
                 </h1>
               </a>
@@ -85,13 +151,13 @@ const Register = () => {
               <div className="mt-4">
                 <div className="flex justify-between">
                   <label className="block text-gray-700 text-sm font-bold mb-2">
-                    Confirm password
+                    Photo url
                   </label>
                 </div>
                 <input
                   className="bg-gray-200 text-gray-700 focus:outline-none focus:shadow-outline border border-gray-300 rounded py-2 px-4 block w-full appearance-none"
-                  type="password"
-                  name=" confirmPassword"
+                  type="text"
+                  name="photourl"
                 />
               </div>
               <div className="mt-8">

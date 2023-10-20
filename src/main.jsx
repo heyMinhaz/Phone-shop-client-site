@@ -13,6 +13,8 @@ import Login from './login/Login';
 import Register from './register/Register';
 import Contact from './components/pages/Contact';
 import BrandData from './brandcard/BrandData';
+import Authprovider from './provider/Authprovider';
+import PrivateRoute from './routes/PrivateRoute';
 
 
 
@@ -34,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproducts",
-        element: <Addproducts></Addproducts>,
+        element: <PrivateRoute><Addproducts></Addproducts></PrivateRoute>,
       },
       {
         path: "/login",
@@ -57,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>
 );
