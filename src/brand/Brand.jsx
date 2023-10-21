@@ -6,13 +6,11 @@ import { Link } from "react-router-dom";
 const Brand = ({ brand }) => {
   const { id, image, name, title } = brand;
 
-  const handelPhone = (name) => {
-    console.log(name);
-  };
+
 
   return (
     <div className="  lg:p-10 p-10">
-      <Link to={`/${name} `} onClick={() => handelPhone(name)}>
+      <Link to={`/brand/${name} `} >
         <div className="card w-96 h-96 bg-base-100 shadow-xl">
           <figure>
             <img

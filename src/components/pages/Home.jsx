@@ -93,10 +93,12 @@ const Home = () => {
           <h1 className="  text-5xl font-bold text-center text-slate-700">
             Our Brands
           </h1>
-          <div className="lg:grid lg:grid-cols-3 lg:gap-10  ">
+                <div className="lg:grid lg:grid-cols-3 lg:gap-10  ">
+                    
             {brands.map((brand) => (
               <Brand brand={brand}></Brand>
             ))}
+                    
           </div>
         </div>
 

@@ -18,6 +18,7 @@ import PrivateRoute from './routes/PrivateRoute';
 
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/addproducts",
-        element: <PrivateRoute><Addproducts></Addproducts></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <Addproducts></Addproducts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -47,9 +52,9 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
       {
-        path: ":/Oneplus",
+        path: "/brand/:brandname",
         element: <BrandData></BrandData>,
-        loader: "http://localhost:5001/phones",
+        loader: ({params}) => fetch(`http://localhost:5001/phones/`),
       },
     ],
   },

@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/Authprovider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/Firebase.config';
-import { Navigate, useLocation, useNavigate } from 'react-router-dom';
+
 
 
 const Register = () => {
