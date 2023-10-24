@@ -7,6 +7,7 @@ import { NavLink, useLocation, useNavigate} from 'react-router-dom';
 import { AuthContext } from '../provider/Authprovider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/Firebase.config';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -31,13 +32,43 @@ const Login = () => {
 
 singIn(email,password)
   .then((result) => {
-      console.log(result.user)
+     const Toast = Swal.mixin({
+       toast: true,
+       position: "top-end",
+       showConfirmButton: false,
+       timer: 3000,
+       timerProgressBar: true,
+       didOpen: (toast) => {
+         toast.addEventListener("mouseenter", Swal.stopTimer);
+         toast.addEventListener("mouseleave", Swal.resumeTimer);
+       },
+     });
+
+     Toast.fire({
+       icon: "success",
+       title: "Login successfully",
+     });
           e.target.reset();
 
     navigate(location?.state ? location.state : "/");
   })
   .catch((error) => {
-    console.error(error);
+    const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener("mouseenter", Swal.stopTimer);
+        toast.addEventListener("mouseleave", Swal.resumeTimer);
+      },
+    });
+
+    Toast.fire({
+      icon: "error",
+      title: "Password is incorrect",
+    });
   });
       
      

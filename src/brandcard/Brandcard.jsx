@@ -2,14 +2,21 @@
 /* eslint-disable react/prop-types */
 
 import { data } from "autoprefixer";
+import { Link } from "react-router-dom";
+
 
 
 
 // eslint-disable-next-line no-unused-vars
 const Brandcard = ({phone}) => {
 
-    const { _id, name, Price, brandname, type, rating, textarea, photourl } = data;
-    return (
+  const { _id, name, Price, brandname, type, rating, textarea, photourl } = data;
+  console.log(_id);
+  return (
+    <div>
+
+
+
       <div className="  lg:p-10 p-10 ">
         <div className="max-w-2xl mx-auto   ">
           <div className="bg-white shadow-lg rounded-lg h-[450px] ">
@@ -67,22 +74,31 @@ const Brandcard = ({phone}) => {
                   {phone.rating}
                 </span>
               </div>
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">
-                  $599
-                </span>
-                <a
-                  href="#"
-                  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                >
-                  Add to cart
-                </a>
+              <div className="">
+                <div className="flex items-center justify-between">
+                  <span className="text-3xl font-bold text-gray-900 dark:text-white">
+                    $599
+                  </span>
+                  <a
+                    href="#"
+                    className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
+                  >
+                    Update
+                  </a>
+                  <Link to={`/phones/${_id}`}>
+                    {" "}
+                    <a className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                      Details
+                    </a>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Brandcard;

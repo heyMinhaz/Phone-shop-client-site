@@ -15,6 +15,7 @@ import Contact from './components/pages/Contact';
 import BrandData from './brandcard/BrandData';
 import Authprovider from './provider/Authprovider';
 import PrivateRoute from './routes/PrivateRoute';
+import BrandDetails from './branddetails/BrandDetails';
 
 
 
@@ -48,13 +49,17 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
+        path: "/phones/_id",
+        element: <BrandDetails></BrandDetails>,
+      },
+      {
         path: "/register",
         element: <Register></Register>,
       },
       {
         path: "/brand/:brandname",
         element: <BrandData></BrandData>,
-        loader: ({params}) => fetch(`http://localhost:5001/phones/`),
+        loader: ({ params }) => fetch(`http://localhost:5001/phones/`),
       },
     ],
   },
