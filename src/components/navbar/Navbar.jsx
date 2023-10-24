@@ -57,7 +57,7 @@ logOut().then().catch();
               className="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
               href="#"
             >
-              <NavLink to="/">
+              <NavLink to="/ ">
                 {" "}
                 <img
                   src="https://i.ibb.co/RcM12Ys/2b0c96bb864f56f97c2c649f8e5548bca9c31248-731x731-removebg-preview.png"
