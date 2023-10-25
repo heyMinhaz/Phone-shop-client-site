@@ -61,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/phones/_id",
-        element: <BrandDetails></BrandDetails>,
+        element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute> ,
       },
       {
         path: "/register",

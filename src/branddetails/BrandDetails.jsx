@@ -10,7 +10,7 @@ const BrandDetails = () => {
     
 
     return (
-      <div className="p-20 ">
+      <div className="p-50 ">
         <div className="card  bg-base-100 shadow-xl">
           <figure>
             <img className=" w-96 h-96" src={photourl} alt="Shoes" />
