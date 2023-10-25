@@ -51,13 +51,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5001/phones/${params.id}`),
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://server-site-sand.vercel.app/phones/${params.id}`),
       },
       {
         path: "/branddetails/:id",
         element: <BrandDetails></BrandDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5001/phones/${params.id}`),
+        loader: ({ params }) => fetch(`https://server-site-sand.vercel.app/phones/${params.id}`),
       },
       {
         path: "/phones/_id",
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
       {
         path: "/brand/:brandname",
         element: <BrandData></BrandData>,
-        loader: ({ params }) => fetch(`http://localhost:5001/phones/`),
+        loader: ({ params }) => fetch(`https://server-site-sand.vercel.app/phones/`),
       },
     ],
   },

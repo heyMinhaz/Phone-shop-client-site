@@ -26,7 +26,7 @@ const Addproducts = () => {
         const addData = {name, Price, brandname, type, rating, textarea, photourl}
         console.log(addData);
 
-        fetch("http://localhost:5001/phones", {
+        fetch("https://server-site-sand.vercel.app/phones", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

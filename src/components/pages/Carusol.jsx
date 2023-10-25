@@ -4,7 +4,7 @@ const Carusol = () => {
     return (
      
             <div>
-        <div className="carousel lg:h-[80vh]  ">
+        <div className="carousel lg:h-[80vh] w-full ">
           <div id="slide1" className="carousel-item relative w-full">
             <img
               src="https://business.ee.co.uk/content/dam/eeb-site/images-2023/home-page/teasers/google-launches/pixel-8-launch/buy-now/pixel8-pro-desktop-banner-bay-buynow.png"

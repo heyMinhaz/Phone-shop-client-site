@@ -19,7 +19,7 @@ const Brandcard = ({phone}) => {
   return (
     <>
       <div>
-        <div className="  lg:p-10 p-10 ">
+        <div className="  lg:p-10  ">
           <div className="max-w-2xl mx-auto   ">
             <div className="bg-white shadow-lg rounded-lg h-[450px] ">
               <a href="#">

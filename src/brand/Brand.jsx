@@ -9,7 +9,7 @@ const Brand = ({ brand }) => {
 
 
   return (
-    <div className="  lg:p-10 p-10">
+    <div className="  lg:p-10  p-5">
       <Link to={`/brand/${name} `} >
         <div className="card w-96 h-96 bg-base-100 shadow-xl">
           <figure>

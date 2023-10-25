@@ -35,7 +35,7 @@ const Update = () => {
         const updateData = { name, Price, brandname, type, rating, textarea, photourl }
         console.log(updateData);
 
-        fetch(`http://localhost:5001/phones/${_id}`, {
+        fetch(`https://server-site-sand.vercel.app/phones/${_id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
