@@ -3,7 +3,7 @@
 
 import { data } from "autoprefixer";
 import { Link } from "react-router-dom";
-import Carusol from "../components/pages/Carusol";
+
 
 
 
@@ -11,15 +11,14 @@ import Carusol from "../components/pages/Carusol";
 // eslint-disable-next-line no-unused-vars
 const Brandcard = ({phone}) => {
 
-  const { _id, name, Price, brandname, type, rating, textarea, photourl } = data;
+  const { _id, name, Price, brandname, type, rating, textarea, photourl } =
+    phone;
+
+  console.log(_id);
 
   return (
     <>
-  
-
       <div>
-
-     
         <div className="  lg:p-10 p-10 ">
           <div className="max-w-2xl mx-auto   ">
             <div className="bg-white shadow-lg rounded-lg h-[450px] ">
@@ -82,17 +81,11 @@ const Brandcard = ({phone}) => {
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">
                       $599
                     </span>
-                    <a
-                      href="#"
-                      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 "
-                    >
-                      Update
-                    </a>
-                    <Link to={`/phones/${_id}`}>
-                      {" "}
-                      <a className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                        Details
-                      </a>
+                    <Link to={`/update/${_id}`}>
+                      <button className="btn btn-sm ">Update</button>
+                    </Link>
+                    <Link to={`/branddetails/${_id}`}>
+                      <button className="btn btn-sm bg-sky-400">Details</button>
                     </Link>
                   </div>
                 </div>

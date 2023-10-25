@@ -24,8 +24,10 @@ const findphone = data?.filter((phone) => phone.brandname == brandname);
   return (
     <div>
       <Carusol></Carusol>
-      <h1 className=" text-5xl mt-10 text-slate-700 font-bold text-center">Products</h1>
-      <div className="lg:grid lg:grid-cols-3 lg:gap-10  ">
+      <h1 className=" text-5xl mt-10 text-slate-700 font-bold text-center">
+        Products
+      </h1>
+      <div className="lg:grid lg:grid-cols-3 lg:gap-10  md:grid-cols-2 md:grid  ">
         {phone.map((phones) => (
           <Brandcard key={phones._id} phone={phones}></Brandcard>
         ))}

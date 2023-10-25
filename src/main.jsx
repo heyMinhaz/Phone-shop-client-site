@@ -16,6 +16,7 @@ import BrandData from './brandcard/BrandData';
 import Authprovider from './provider/Authprovider';
 import PrivateRoute from './routes/PrivateRoute';
 import BrandDetails from './branddetails/BrandDetails';
+import Update from './update/Update';
 
 
 
@@ -47,6 +48,16 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/update/:id",
+        element: <Update></Update>,
+        loader: ({ params }) => fetch(`http://localhost:5001/phones/${params.id}`),
+      },
+      {
+        path: "/branddetails/:id",
+        element: <BrandDetails></BrandDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5001/phones/${params.id}`),
       },
       {
         path: "/phones/_id",

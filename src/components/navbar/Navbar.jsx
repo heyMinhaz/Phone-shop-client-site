@@ -13,8 +13,8 @@ const Navbar = () => {
 logOut().then().catch();
 
 }
-
-
+  
+  
 
     return (
       <nav className="  flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5  dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
@@ -207,13 +207,25 @@ logOut().then().catch();
                 aria-expanded="false"
               >
                 {/* User avatar */}
-                <img
-                  src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
-                  className="rounded-full mr-3"
-                  style={{ height: "25px", width: "25px" }}
-                  alt=""
-                  loading="lazy"
-                />
+                {user ? (
+                  <div>
+                    <img
+                      className="rounded-full mr-3 w-10"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    <img
+                      src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
+                      className="rounded-full mr-3"
+                      style={{ height: "25px", width: "25px" }}
+                      alt=""
+                      loading="lazy"
+                    />
+                  </div>
+                )}
 
                 {user ? (
                   <button onClick={handelSingOut} className="btn">
