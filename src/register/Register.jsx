@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../provider/Authprovider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../firebase/Firebase.config';
+import Swal from 'sweetalert2';
 
 
 
@@ -52,7 +53,22 @@ console.log(result.user);
           .then((result) => {
             const user = result.user;
             console.log(user);
-           
+               const Toast = Swal.mixin({
+                 toast: true,
+                 position: "top-end",
+                 showConfirmButton: false,
+                 timer: 3000,
+                 timerProgressBar: true,
+                 didOpen: (toast) => {
+                   toast.addEventListener("mouseenter", Swal.stopTimer);
+                   toast.addEventListener("mouseleave", Swal.resumeTimer);
+                 },
+               });
+
+               Toast.fire({
+                 icon: "success",
+                 title: "Login successfully",
+               });
           })
           .catch((error) => {
             console.log("error", error.message);
