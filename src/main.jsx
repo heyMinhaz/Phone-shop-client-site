@@ -56,13 +56,10 @@ const router = createBrowserRouter([
       },
       {
         path: "/branddetails/:id",
-        element: <BrandDetails></BrandDetails>,
+        element: <PrivateRoute><BrandDetails></BrandDetails></PrivateRoute>,
         loader: ({ params }) => fetch(`https://server-site-sand.vercel.app/phones/${params.id}`),
       },
-      {
-        path: "/phones/_id",
-        element:<PrivateRoute><BrandDetails></BrandDetails></PrivateRoute> ,
-      },
+
       {
         path: "/register",
         element: <Register></Register>,
